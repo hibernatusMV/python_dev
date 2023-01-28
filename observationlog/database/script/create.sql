@@ -46,7 +46,7 @@ DROP TABLE IF EXISTS tblseeing;
 CREATE TABLE tblseeing(
 	see_id				INT PRIMARY KEY NOT NULL,
 	see_scale			VARCHAR(50)		NOT NULL,
-	see_rating			VARCHAR(50)		NOT NULL
+	see_rating			VARCHAR(50)		NOT NULL,
 	see_description		TEXT			NULL
 );
 DROP TABLE IF EXISTS tblequipment;
