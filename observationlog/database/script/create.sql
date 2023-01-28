@@ -38,7 +38,7 @@ CREATE TABLE tbleyepiece(
 );
 DROP TABLE IF EXISTS tblobjecttype;
 CREATE TABLE tblobjecttype(
-	typ_id				INT	PRIMARY KEY NOT NULL,
+	typ_id				INT PRIMARY KEY NOT NULL,
 	typ_name			VARCHAR(50)		NOT NULL,
 	typ_description		TEXT			NULL
 );
