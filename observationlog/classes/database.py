@@ -8,11 +8,7 @@ class database:
 
     def execQuery(query):
         # print(os.getcwd())
-        conn = sqlite3.connect("database/observationlog.db")
-
-        cursor = conn.cursor()
-        cursor.execute(query)
-        database.data = cursor.fetchall()
-        
-        conn.commit()
-        conn.close()
+        with sqlite3.connect("database/observationlog.db") as conn:
+            cursor = conn.cursor()
+            cursor.execute(query)
+            database.data = cursor.fetchall()
