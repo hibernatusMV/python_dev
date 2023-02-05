@@ -7,6 +7,7 @@ class database:
     rowcount = 0
 
     def execQuery(query):
+        """ retrieve data for specific select """
         with sqlite3.connect("database/observationlog.db") as conn:
             try:
                 cursor = conn.cursor()
@@ -14,12 +15,14 @@ class database:
             
                 row = 0
                 col = 0
-            
+
+                # shove values from tuple into array
                 for dataset in cursor:
                     for value in dataset:
                         database.data[row,col] = value
                         col += 1
                     row += 1
+                database.rowcount = row # rows retrieved
             
             except sqlite3.OperationalError:
                 print("Tabelle nicht gefunden!")
